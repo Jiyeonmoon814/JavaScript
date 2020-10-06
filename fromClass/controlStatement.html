@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Control Statement</title>
+	<script type="text/javascript">
+		var a = 8;
+		if(a % 2 == 0){
+			document.write("even : " + a + "<br>");
+		}else{
+			document.write("odd : " + a + "<br>");
+		}
+		
+		var c = 7;
+		if(c % 2 == 0){
+			document.write("multiples of two : " + c + "<br>");
+		}else if(c % 3 == 0){
+			document.write("multiples of three : " + c + "<br>");
+		}else{
+			document.write("extra : " + c + "<br>");
+		}
+
+		//for문 1-100까지의 합
+
+		var sum=0;
+		for(let i=1; i<=100; i++){
+			sum+=i
+		}
+
+		document.write("sum:"+sum+"<br>");
+
+		var a=0;
+		for(let i=2; i<=9; i++){
+			for(let j=1; j<=9; j++){
+				document.write(i+"*"+j+"="+i*j+"&nbsp;&nbsp;&nbsp");
+			}
+			document.write("<br>");
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

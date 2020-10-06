@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Java Script</title>
+	<script type="text/javascript" src="script/common.js">
+		/* 
+			javascript (translate web browser, code, **in the right order of the lines**)
+			cf. url 주소 : naver.com/js/common.js > 실행 > common.js local download > 웹 브라우저 해석,실행
+			javascript (oop언어 : class개념 > 상속, 다형성, 재사용성)
+
+			javascript 사용
+			1.Delete, change and add the contents, attributes of html dynamically
+			2.Delete, change and add the attributes of css dynamically
+			3.Check a validation >> check id, numbers
+			4.dynamical web pages
+			5.top 1 in the world 
+			-jquer.js >> codes are shorter than that of javaScript
+			-angular.js (mvc) : make the production better, faster
+			-vue.js, react.js >> still producting framwork, version up 
+			-web browswer is necessary to run js files 
+			-To fix this, they started to think what if js could run on the local(v8 engine) like jdk >> node.js(be interlocked with db) >> need to learn npm 
+			6.grammers
+			 -classified into Upper and lower case
+			 -terminator
+			 -type(var, const, let) : let a; a=10; >> Set the value >> Decide the type
+			 -an operator, control statement, object
+			7.How to use (the same as css : common.css) >> common.js
+			 -in-line (inside the tag <p onclick="<script>command statement...")
+			 -internal (inside the page <head><script>..</head> or <body><script>..</body>)
+			 -external(outside the file : common.js >> link * prefered)
+		*/
+
+	function call(){
+		alert('internal');
+	}
+
+
+	</script>
+</head>
+<body>
+	<h3>In-line</h3>
+	<input type="button" value="in-line" name="alert ('hello world')">
+	<hr>
+	<h3>Internal</h3>
+	<input type="button" value="internal" name="call()">
+	<hr>
+	<h3>External</h3>
+	<input type="button" value="external" name="alert ('hello world')">
+	<hr>
+</body>
+</html>

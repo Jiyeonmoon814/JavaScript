@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Title</title>
+	<link rel="shortcut ico" type="image/x-icon" href="icon/favicon.ico">
+	<script type="text/javascript">
+
+		//javascript 해석 : web browswer >> 해석기, 다양한 객체 제공
+		//웹 브라우저 내장 객체 >> window 객체
+		window.document.write("Hello<br>");
+		//window 객체 생략 가능
+		document.write("available to omit window oop<br>")
+
+		console.log(10+100);
+		console.log("debugging, preview the result, chect the error msg");
+
+		document.write("<b>hello world<b>");
+		document.write('<table border="1">');
+		document.write('<tr><td>aa</td><td>bb</td></tr>');
+		document.write("</table>");
+
+		var num; // don't define a type before 
+		let num2;
+		//int num, float num, String num
+		console.log(num); // undefined >> normal msg
+		num = 100; // set a type as soon as it has a value
+		console.log("num:"+num);
+		console.log(typeof(num)); // number
+
+		//in the right order
+		//should be based on functions since a function runs, when it's called
+		function data(){
+		var ele = window.document.forms[0].elements[0];
+		consle.log(ele);
+		}
+	</script>
+</head>
+<body>
+	<form action="#" method="get" name="myform">
+		<input type="text" name="userid" value="andy"><br>
+		<input type="password" name="pwd" value="0602"><br>
+		<input type="submit" name="submit">
+	</form>
+	<input type="button" value="click Me" onclick="">
+
+</body>
+<script type="text/javascript">
+	var ele = window.document.forms[0].elements[0];
+		console.log(ele);
+		console.log(ele.value.lenght);
+
+		//window.documnet.forms[0].elements[0]; 접근방식은
+		var value = window.document.myform.userid.value;
+		console.log("Type:"+typeof(value));
+
+		if(value.lenght<5){
+			alert("Reenter it");
+			ele.value="";
+		}
+</script>
+</html>

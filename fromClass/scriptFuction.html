@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		var myTime = window.setInterval(function(){
+		//anonymous function >> call back 함수
+			let d = new Date();
+			let t = d.toLocaleTimeString(); 
+			document.getElementById("time").innerHTML = t;
+			}, 1000);
+
+		//windows.setInterval(function(){},1000);
+		//call annoymous fuction in every one sec
+
+		//function a(){}
+		//window.setInterval(a,1000)
+		function myTimeStop(){
+			window.clearInterval(myTime);
+		}
+	</script>
+</head>
+<body>
+	<p id="time"></p>
+	<button onclick="">stop Time</button>
+</body>
+</html>

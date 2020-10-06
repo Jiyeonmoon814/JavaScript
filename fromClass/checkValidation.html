@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		//Check a validation
+		//client > server > Request a sign-in > transfer client to the page
+		//1. enter id, pwd > send it to the server > get the value > check > client > response
+		//2. enter id, pwd > check it on the client > after checking it > send it to the server > response
+		//check if id,pwd are in 5 letters
+		//choose 2 > network traffic(round trim) : count the time with server : javascript code..validate
+
+		//check overlapping id(send it to the server)
+
+		function send() {
+			// Check a validation >> send it to the server
+			//1.get the info of elements
+			//var ele = document.forms[0].elements[0].value
+			//eventually, use dome 
+
+			var inputUserId = document.loginform.txtUserId;
+			//<input type="txt" name="txtUserId"> == inputUserId
+			console.log(inputUserId);
+			console.log(inputUserId.value);
+
+			//dom script
+			var userPwd = document.getElementById("txtPwd");
+			console.log(userPwd);
+			console.log(userPwd.value);
+
+			//validation logic
+			//1.check if it's entered or not
+			//2.work logic
+			if(inputUserId.value==""||!(inputUserId.value.length>=3&&inputUserId.value.length<=10)){
+				alert("re-enter it");
+				document.loginform.txtUserId.focus();
+				inputUserId.select();
+			}else{
+				alert("Checked");
+				//send it to a server
+				//action = "" principle: action="logIn.jsp"
+				document.loginform.action = "logIn.jsp"; 
+				//dynamically change the location
+				document.loginform.submit(); //form tag >> call submit()
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<!--
+		input tag에 name 속성을 주지 않으면 sever에서 받을 수 없다
+		input tag에 id 속성 >> javascript, css통해서 제어
+		
+		일반적으로
+		<input name="user" id="user"...
+	-->
+	<form action="" method="get" name="loginform">
+		id:<input type="text" name="txtUserId"><br>
+		pwd:<input type="password" name="txtPwd" id="txtPwd"><br>
+		<input type="button" value="submit" onclick="send()">
+		<!--
+			type="submit"
+			type="image"
+			type="button" onclick="function()"
+		-->
+	</form>
+
+</body>
+</html>

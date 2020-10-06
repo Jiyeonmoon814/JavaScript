@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Java Script Grammer</title>
+	<script type="text/javascript">
+	/*
+	-변수 생성 > 값 입력 > 타입 설정
+	-ES5(모든 변수의 타입 VAR) : ES6(2015) (LET, CONST)
+	-VAR, LET, CONST 3가지 사용 가능
+	-권장 LET, CONST
+
+	VAR A;
+	LET B;
+	CONST C;
+
+	String, Number type을 가지고 있음
+	var i; undefined
+	i="andy" >> set a type >> String
+	i=100; >> set a type >> Number
+	initialization >> set a type 
+	-javascript (int, float, boolean, String)
+	-internal >> Number, boolean, Array, Object..
+
+	Variable (scope):
+	1.page >> instance 
+	2.function >> local
+
+
+	*/
+
+	var num;
+	function call(){
+	let name;
+	name = "andy";
+	}
+
+	var a;
+	console.log(a); //undefined
+	a = 100; //initialization
+	console.log(a);
+	console.log(typeof(a));
+
+	var i, j 
+	i = 200;
+	j = 300;
+	var result = i+j;
+	console.log(result);
+
+	var intnum = 100;
+	var dnum = 12.345;
+	var flag = true; 
+	var str = null;
+	var str2 = "ABC" // js는 string, char 구분이 없음 
+
+	console.log(typeof(intnum));
+	console.log(typeof(dnum));
+	console.log(typeof(flag));
+	console.log(typeof(str));
+	console.log(typeof(str2));
+
+	//연산자
+	//산술 (+,-,*,/,%)
+	var num1 = 10;
+	var num2 = 3;
+	document.write(num1/num2+"<br>"); //실수범위
+	document.write(num1%num2+"<br>"); //나머지
+
+	//관계 (== (===), !=, >=, < .....)
+	//true, false
+	var a=3;
+	var b=5;
+	document.write((a==b)+"<br>");
+	document.write((a!=b)+"<br>");
+	document.write((a>b)+"<br>");
+
+	//논리(&&, ||)
+	document.write((10>5)&&(1!=3)+"<br>");
+	document.write((10<5)||(1!=3)+"<br>");
+
+	//삼항연산자
+	var result2 = (4%2==0) ? "even" : "odd";
+	document.write(result2+"<br>");
+
+	//대입연산자(+=,-=,*=,/=)
+	var p = 10;
+	var k = 5;
+	p+=k;
+	document.write("result:"+p+"<br>");
+
+	var x = 5+5;
+	var y = "5" + 5;
+	var z = "Hello" + 5;
+
+	document.write("x:"+x+" ,y:"+y+" z:"+z+"<br>");
+
+	var v = "5";
+	var v2 = 5;
+	var v3 = 5;
+	document.write((v==v2)+"<br>");
+	document.write((v===v2)+"<br>"); // point 내부적으로 type 비교 
+</script>
+</head>
+<body>
+
+</body>
+</html>
