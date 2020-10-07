@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var name="";
+	var email="";
+	function initValue(frm){//all elements of frm
+		name=frm.username.value;
+		email=frm.checkmail.checked;
+	}
+
+	function copySend(frm){
+		console.log(frm); // all elements including a form
+		console.log(frm.username.value);
+		console.log(frm.checkmail.checked); // true, false
+	
+
+		if(frm.copy.checked){
+			initValue(frm);
+			frm.copyname.value=name;
+			frm.copymail.checked=email;
+		}else{
+			alert("Clear");
+			frm.copyname.value="";
+			frm.copymail.checked=false;
+		}
+	}
+</script>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Order Info</legend>
+			Name:<input type="text" name="username"><br> 
+			       <input type="checkbox" name="checkmail">E-mail to get Delievery Info<br>
+			<hr>
+			<input type="checkbox" name="copy" onclick="copySend(this.form)">
+			An orderer and shipping Info are the same 
+		</fieldset>
+		<hr>
+		<fieldset>
+			<legend>Shipping Info</legend>
+			Name:<input type="text" name="copyname"><br> 
+			       <input type="checkbox" name="copymail">E-mail to get Shipping Info<br>
+		</fieldset>
+	</form>
+</body>
+</html>

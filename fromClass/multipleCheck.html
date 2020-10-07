@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var checkflag = "false"; //전역변수
+        function checkForm(){
+            var list = document.myform.list;
+            //list 변수의 타입은 Array
+            //console.log(list);
+            //console.log(list.length);
+            if(checkflag==false){
+                for(let index in list){
+                    //console.log(list[index]);
+                    //list[0] >> <input type="checkbox" name="list" value="java">
+                    list[index].checked="true";
+                    //<input type="checkbox" name="list" value="java" checked>
+                }
+                checkflag="true";
+                return "[Clear]"
+            }else{
+                for(let index in list){
+                    list[index].checked="false";
+                }
+                checkflag="false";
+                return "[Check All]"
+				}
+            }
+            
+            function checkForm2(list){
+                console.log(list);
+                return "return";
+            }
+</script>
+</head>
+<body>
+    <form action="" name="myform">
+        A subject which u like : <br>
+        <input type="checkbox"   name="list"   value=" java">JAVA<br>
+		<input type="checkbox"   name="list"   value=" oracle">ORACLE<br>
+		<input type="checkbox"   name="list"   value=" html">HTML<br>
+		<input type="checkbox"   name="list"   value=" css">CSS<br>
+		<input type="checkbox"   name="list"   value=" script">SCRIPT<br>
+        <input type="button"   value="[Check All] "  onclick="this.value=checkForm()"><br><br>
+        <input type="button"   value="[Check All] "  onclick="this.value =checkForm2(this.form.list)"><br>
+    </form>
+    
+</body>
+</html>

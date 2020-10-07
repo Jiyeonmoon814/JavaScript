@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js Function(String, Number)</title>
+    <script>
+        var str = "10+20+30";
+        document.write(str+"<br>");
+
+        //1.eval()
+        //문자형 수식을 계산식으로 >> "10+20+30" >> 10+20+30 >> 60 
+        document.write("eval( ):"+eval(str)+"<br>");
+
+        //2.isNaN() >> Not a Number >> True >> return False == number 
+        document.write(isNaN("12345")+"<br>");
+        document.write(isNaN("12+345")+"<br>");
+
+        let i = "100";
+        let j = "200";
+        document.write("combination:"+(i+j)+"<br>");
+        document.write("conversion to number:"+(Number(i)+Number(j)));
+
+        /*
+        Coversion to num
+        The Number() method
+        The paseInt() method
+        The paseFloat() method
+        */
+
+       /* 
+			Event			Description
+			onchange		An HTML element has been changed
+			onclick		    The user clicks an HTML element
+			onmouseover		The user moves the mouse over an HTML element
+			onmouseout		The user moves the mouse away from an HTML element
+			onkeydown		The user pushes a keyboard key
+        ****onload			The browser has finished loading the page
+                            >>html에서 body 안에 있는 모든 요소를 메모리,웹 브라우저에 로딩되고 난 후에
+                            자동으로 호출 이벤트 onload() 발생
+                            모든 요소는 메모리에 계층트리(dom) 형태로 있다는 보장 
+            onblur() >> 포커스가 요소를 떠날 때 발생
+            onfocus() >> 포커스가 요소에 들어올 때 발생 
+        */
+        
+        function focusFunc(){
+				document.getElementById("myinput").style.background = "yellow";
+			}
+		function blurFunc(){
+				document.getElementById("myinput").style.background = "white";
+            }
+        
+        function selectTag(){
+            var val = document.myform.sel.value;
+            alert(val);
+        }
+
+        //point : js >> this(요소자신)
+        function changeColor(obj){
+				console.log(obj);
+				obj.style.backgroundColor = "gold";
+			}
+		function changeColor2(obj){
+				console.log(obj);
+				obj.style.backgroundColor = "white";
+            }
+        
+        //in the right order 
+        //var data = document.myform.money.value;
+        //console.log(isNaN(data));
+        
+        function load(){ //run automatically >> when all elements in body are on load  
+            var data = document.myform.money.value;
+				console.log(isNaN(data));
+			}
+</script>
+</head>
+<body>
+
+    <form action="#" name="myform">
+	  	
+        <input type="text"  id="myinput"  name="myinput"   onfocus="focusFunc()"  onblur="blurFunc()"><br>
+        
+        <select name="sel" onchange="selectTag()" >
+            <option value="A">AA</option>
+            <option value="B">BB</option>
+            <option value="C">CC</option>
+            <option value="D">DD</option>
+        </select>
+        <hr>
+        
+        <input type="text" onmouseover="changeColor(this)" onmouseout="changeColor2(this)" >
+        <br>
+        <input type="text" onkeypress="alert('Stop it')" >
+        <br>
+        <input type="text" value="1000" name="money">
+    </form> 
+    
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Internal Object</title>
+    <script type="text/javascript">
+    /*
+        js offers many different kinds of internal objects 
+        date(), array()
+    */
+    var today = new Date();
+    document.write(today+"<br>");
+    document.write(today.getFullYear()+"<br>");
+    document.write(today.getMonth()+"<br>");
+    document.write(today.getDate()+"<br>");
+    document.write(today.getHours()+"<br>");
+    document.write(today.getMinutes()+"<br>");
+    document.write(today.getSeconds()+"<br>");
+
+    //math
+    document.write(Math.random()+"<br>");
+    document.write((parseInt(Math.random()*45)+1)+"<br>");
+
+    document.write(Math.round(3.5678)+"<br>");
+    document.write(Math.max(3,44,55,77,9)+"<br>");
+
+    //String Fx 
+    var str="ABCDEF";
+
+    with(document){
+        write(str+"<br>");
+        write(str.length+"<br>");
+        write(str.charAt(2)+"<br>");
+        write(str.indexOf("D")+"<br>");
+        write(str.concat(" Andy")+"<br>");
+
+        let str2 = str.replace("E", "123");
+        write(str2+"<br>");
+        write(str.substring(2,4)+"<br>");
+
+        let strarr = "A B C D";
+        let arr = strarr.split(" "); // return Array
+        write(arr); //A,B,C,D
+
+        //Today point
+        //개선된 for 문
+        //java >> for(String s : arr){the value of array s}
+        //javascript >> for(let s in arr){}
+        //c# >> for(String s in arr){the value of array s}
+
+        write("<br>");
+        for(let index in arr){
+            write(arr[index]+"<br>");
+        }
+
+        for(let index in arr){
+            write(index+"<br>");
+        }
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

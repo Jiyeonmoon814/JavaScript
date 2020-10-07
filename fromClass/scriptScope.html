@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Outside myFunction() carName is undefined.</p>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+</body>
+
+<script>
+    //Global variable 
+    var gname = 'world';
+
+    myFunction();
+
+    function myFunction() {
+    var carName = "Volvo";
+    document.getElementById("demo1").innerHTML = typeof (carName) + " " + carName;
+    //Global
+    document.getElementById("demo3").innerHTML = typeof (gname) + " " + gname;
+    }
+    document.getElementById("demo2").innerHTML = typeof carName;+"<hr>"
+    document.getElementById("demo4").innerHTML = typeof gname;+"<hr>"
+    /*
+        ES2015 >> LET, CONST
+        1.GLOBAL
+
+        2.LOCAL
+
+        3.NEW BLOCK
+    */
+</script>
+</html>
