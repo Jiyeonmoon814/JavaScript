@@ -38,7 +38,7 @@
 </head>
 <body>
 	<form action="#" method="get" name="myform">
-		<input type="text" name="userid" value="andy"><br>
+		<input type="text" name="userid" value="andrius"><br>
 		<input type="password" name="pwd" value="0602"><br>
 		<input type="submit" name="submit">
 	</form>
@@ -54,7 +54,7 @@
 		var value = window.document.myform.userid.value;
 		console.log("Type:"+typeof(value));
 
-		if(value.lenght<5){
+		if(value.length<5){
 			alert("Reenter it");
 			ele.value="";
 		}
