@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	  window.onload =function(){
+        var meNode;
+        meNode = document.getElementById("me");
+        meNode.style.backgroundColor="yellow";
+
+        var parentNode = meNode.parentNode; //body
+        parentNode.style.backgroundColor="skyblue";
+
+        var grandNode;
+        grandNode = parentNode.parentNode; // html 
+        grandNode.style.backgroundColor="coral";
+
+        var my = document.getElementById("mychild");
+        console.log(my);
+        console.log(my.firstChild.nodeName); //tag name : li
+        console.log(my.firstChild.innerText); //a value of Inner Text : AA , innerText >> no value >> div, span, li, p... 
+                                              //has a value >> input
+        console.log(my.firstChild.nextSibling.innerText); //BB
+        console.log(my.childNodes);//Array >> NodeList >> [li, li, li]
+        console.log(my.childNodes.length);
+
+        for(let i=0; i<my.childNodes.length; i++){
+            let text = my.childNodes[i].innerText;
+            console.log(text);
+        }
+
+	  }	
+	</script>
+</head>
+<body>
+<div>A</div><div>B</div><div id="me">C</div><div>D</div><div>E</div>
+<ul id="mychild"><li>AA</li><li>BB</li><li>CC</li></ul>
+</body>
+</html>
