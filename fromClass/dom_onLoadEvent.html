@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event&onLoad</title>
+    <script text="text/javascript">
+        /*
+        on load 이벤트가 발생하는 시점 
+        :boby tag 안에 모든 요소 브라우저에 loading dom..
+        function call() {} // 다른 곳에서 호출 사용 가능
+
+        <body onload="call()">
+        window.onload=call();
+
+        call() 재사용 안함, 일회성
+
+        */
+
+        window.onload=function(){//익명함수 : 일회성함수(onload시에만 사용, 재사용 불가능)
+            //page 모든 요소가 loading 된 후에 함수가 자동 실행
+            var out ="";
+            out += "<ul>";
+                out += "<li>javascript</li>";
+                out += "<li>jquery</li>";
+                out += "<li>vue</li>";
+            out += "</ul>";
+            document.body.innerHTML=out;
+
+            var header = document.createElement("h1");
+            //<h1></h1>
+
+            var textnode = document.createTextNode("HELLO");
+            //HELLO
+
+            header.appendChild(textnode);
+            //<h1>HELLO</h1>
+
+            document.body.appendChild(header);
+
+            //img tag 생성 후 src 속성을 만들고 body 태그의 자식으로 append
+            
+            var img = document.createElement("img"); // <img>
+            img.setAttribute("src","images/flowers.png"); //<img src="images/flowers.png">
+            img.setAttribute("width","100");
+            img.setAttribute("height","100");
+            //<img src="images/flowers.png" width="100" height="100">
+            document.body.appendChild(img);
+            
+        }
+
+    </script>
+</head>
+<body>
+    HELLO WORLD
+
+    <img src="" alt="">
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){//run after all elements are on load
+            var btnobj=document.getElementById("btnGetData"); //has a button obj
+            //a Dinamical event
+            //<input type="button" onclick() >> 지양>
+            btnobj.onclick=function(){//anonymous fx
+                var txtmsg = document.getElementById("txtmsg");
+                var str="";
+                str += "ID:"+txtmsg.getAttribute("id");
+                str += "\n value:"+txtmsg.getAttribute("value");
+                str += "\n value:"+txtmsg.value;
+                str += "\n length:"+txtmsg.value.length;
+                console.log(str);
+            }
+            document.getElementById("btnCreate").onclick=function(){
+                var txtname = document.createElement("input");
+                txtname.setAttribute("type","text"); //attribute, value
+                txtname.setAttribute("id","txtbox");
+                txtname.setAttribute("value","Andy");
+                document.body.appendChild(txtname);  
+                }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txtmsg" value="Hello">
+    <input type="button" value="getInfo" id="btnGetData">
+    <hr>
+    <input type="button" value="Dinamical creation" id="btnCreate">
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload=function(){
+            var pele = document.createElement("p");
+            var hele = document.createElement("hr");
+            var h3ele = document.createElement("h3");
+            var textnode = document.createTextNode("HELLO WORLD");
+            var divele = document.createElement("div");
+            var textnode2 = document.createTextNode("HI THERE")
+
+            hele.setAttribute("title","horizon");
+            h3ele.appendChild(textnode);
+            divele.appendChild(textnode2);
+            document.body.appendChild(pele).appendChild(divele);
+            document.body.appendChild(hele);
+            document.body.appendChild(h3ele);
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
