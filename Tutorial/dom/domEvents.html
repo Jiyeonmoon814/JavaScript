@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Events</title>
+</head>
+<body>
+    <p>Click Me to check what time it is now</p>
+    <button onclick="displayDate()">Click ME!</button>
+
+    <script>
+        function displayDate(){
+            document.getElementById("demo").innerHTML=Date();
+        }
+    </script>
+
+    <p id="demo"></p>
+
+    <p>Click "Try Me!" to execute the displayDate() function</p>
+    <button id="btn">Try Me!</button>
+    <p id="demo2"></p>
+
+    <script>
+        document.getElementById("btn").onclick=displayDate;
+        function displayDate(){
+            document.getElementById("demo2").innerHTML=Date();
+        }
+    </script>
+
+    <br><hr><br>
+
+    <script>
+        function upperCase(){
+            var x = document.getElementById("fname")
+            x.value = x.value.toUpperCase();
+
+            
+        }
+    </script>
+
+    Enter your name : <input type="text" id="fname" name="fname" onchange="upperCase()">
+    <br><br><hr><br>
+
+    <div onmousemove="mOver(this)" onmouseout="mOut(this)" 
+    style="background-color: coral; width: 120px; height: 20px; padding: 40px; text-align: center;">Mouse over Me</div>
+    <br><br><hr><br>
+
+    <script>
+        function mOver(obj){
+            obj.innerHTML = "HI"
+        }
+
+        function mOut(obj){
+            obj.innerHTML="Mouse Over ME"
+        }
+    </script>
+
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)"
+    style="background-color: cornflowerblue; width: 90px; height: 20px; padding: 40px; text-align: center;">
+    Click Me</div>
+
+    <script>
+        function mDown(obj){
+            obj.style.backgroundColor = "pink";
+            obj.innerHTML = "Let me go";
+        }
+
+        function mUp(obj){
+            obj.style.backgroundColor = "violet";
+            obj.innerHTML="Cheers";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elements</title>
+</head>
+    <h2>Find HTML Elements</h2>
+    
+<body>
+    <p id="demo">HELLO WORLD</p>
+    <p id="demo2"></p>
+
+
+    <p>Hi</p>
+    <p>This is a sample</p>
+    <p>To figure out what dom Elements are</p>
+
+    <p id="demo3"></p>
+
+    <div id="main">
+        <p1>The DOM is very useful</p1>
+        <p1>This example demonstrated the 
+            <b>getElementsByTagName</b>method.
+        </p1>
+    </div>
+
+    <p id="demo4"></p>
+   
+
+    <script>
+        var myElement = document.getElementById("demo");
+        document.getElementById("demo2").innerHTML=
+        "demo2 p has been changed to demo which is " + myElement.innerHTML;
+
+        var x = document.getElementsByTagName("p");
+        document.getElementById("demo3").innerHTML= 
+        x[2].innerHTML;
+
+        var y = document.getElementById("main");
+        var z = y.getElementsByTagName("p1");
+
+        document.getElementById("demo4").innerHTML=
+        'The first paragraph(index0) inside "main" is : ' + z[0].innerHTML;
+        
+    </script>
+</body>
+</html>
