@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mydiv1">
+        <p id="p1">This is a paragrahph</p>
+        <p id="p2">This is another paragraph</p>
+        <p id="p3">This is the last paragraph</p>
+    </div>
+
+    <script>
+        //This code creates a new <p> elements
+        var pNode=document.createElement("p");
+        //To add text to the <p> element, you must create a text node first. 
+        //This code creats a next node
+        var node=document.createTextNode("This is a created text node");
+        //Then you must append the text node to the <p> element
+        pNode.appendChild(node);
+        
+        //Finally you must append the new element to an existing element 
+        //This code finds an existing element 
+        var element = document.getElementById("mydiv1");
+        //This code appends the new element to the existing element 
+        element.appendChild(pNode);
+
+        var beforeNode=document.createElement("p");
+        var node2=document.createTextNode("This code gonna be inserted before the existing elements");
+        beforeNode.appendChild(node2);
+
+        var element = document.getElementById("mydiv1");
+        var child = document.getElementById("p1")
+        element.insertBefore(beforeNode, child);
+
+    </script>
+    
+    <button onclick="removeEle()">Remove Element</button>
+
+    <script>
+        function removeEle(){
+            var ele = document.getElementById("p2");
+            ele.remove();
+        }
+    </script>
+
+    <button onclick="rmChild()">Remove ChildNode</button>
+    <button onclick="replaceCh()">Replace ChildNode</button>
+    <script>
+        function rmChild(){
+            var parent = document.getElementById("mydiv1");
+            var child = document.getElementById("p1");
+            parent.removeChild(child);
+        }
+
+        function replaceCh(){
+            var parent = document.getElementById("mydiv1")
+            var child = document.getElementById("p3");
+            var rNode = document.createElement("p");
+            var node = document.createTextNode("This gonna replace the existing one");
+            rNode.appendChild(node);
+            parent.replaceChild(node, child);
+        }
+    </script>
+
+</body>
+</html>

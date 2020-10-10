@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1, #div2{
+            background-color: coral;
+            padding: 50px;
+        }
+
+        #p1, #p2{
+            background-color: white;
+            padding: 20px;
+            font-size: 20px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <button id='myBtn'>Click Me</button>
+    <p id="demo"></p>
+    <script>
+        document.getElementById("myBtn").addEventListener("click",displayDate);
+        function displayDate(){
+            document.getElementById("demo").innerHTML=Date();
+        }
+    </script>
+
+    <button id="btn">Click Me!</button><br><br>
+    <script>
+        document.getElementById("btn").addEventListener("click",function(){
+            alert("HELLO WORLD")
+        });
+    </script>
+
+    <button id="btn2">Try it</button>
+    <script>
+        var x = document.getElementById("btn2");
+        x.addEventListener("click",myFunction);
+        x.addEventListener("click",myFunction2);
+
+        function myFunction(){
+            alert("HELLO WORLD");
+        }
+
+        function myFunction2(){
+            alert("GOOD-BYE WORLD");
+        }
+    </script>
+    <br><br>
+    <button id="btn3">Try Me!</button>
+    <p id="demo3"></p>
+
+    <script>
+        var x=document.getElementById("btn3");
+        x.addEventListener("mouseover",firstFx);
+        x.addEventListener("click",secondFx);
+        x.addEventListener("mouseout",thirdFx);
+
+        function firstFx(){
+            document.getElementById("demo3").innerHTML+="Moused over!<br>";
+        }
+
+        function secondFx(){
+            document.getElementById("demo3").innerHTML+="Clicked!<br>";
+        }
+
+        function thirdFx(){
+            document.getElementById("demo3").innerHTML+="Moused out!<br>";
+        }
+    </script>
+
+    <div id="div1">
+        <h2>Bubbling : inner element is handled first and then div element's click event</h2>
+        <p id="p1">Click Me!</p>
+    </div><br>
+
+    <div id="div2">
+        <h2>Capturing : div element will be handled first and then inner element will be</h2>
+        <p id="p2">Click Me!</p>
+    </div>
+
+    <script>
+        document.getElementById("p1").addEventListener("click",function(){
+            alert("you clicked the white element!");
+        }, false);
+
+        document.getElementById("div1").addEventListener("click",function(){
+            alert("you clicked the coral element!");
+        }, false);
+
+        document.getElementById("p2").addEventListener("click",function(){
+            alert("you clicked the white element!");
+        }, true);
+
+        document.getElementById("div2").addEventListener("click",function(){
+            alert("you clicked the coral element!");
+        }, true);
+    </script>
+
+
+</body>
+</html>

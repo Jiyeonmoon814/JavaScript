@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Click the button</p>
+    <p>to Change the color of all p elements</p>
+    <p>from black to red</p>
+
+    <button onclick="myFunction()">Click Me</button>
+
+    <script>
+        function myFunction(){
+            var myCollection=document.getElementsByTagName("p");
+            var i;
+            for (i=0; i<myCollection.length; i++){
+                myCollection[i].style.color="red";
+            }
+        }
+    </script>
+    
+</body>
+</html>
