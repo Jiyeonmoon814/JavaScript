@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style type="text/css">
+		table{width: 100%}
+		table,tr,th,td {border: 1px solid; border-collapse: collapse;}
+		th{background-color: coral; text-align: center;}
+	</style>
+	<script type="text/javascript">
+		//https://jsonformatter.org/json-parser
+        window.onload=function() {
+		var movie = {
+				  "boxOfficeResult": {
+					    "boxofficeType": "일별 박스오피스",
+					    "showRange": "20201001~20201001",
+					    "dailyBoxOfficeList": [
+					      {
+					        "rank": "1",
+					        "movieNm": "담보",
+					        "openDt": "2020-09-29",
+					        "salesAcc": "2610895850",
+					        "audiCnt": "146641",
+					        "audiAcc": "312490",
+					      },
+					      {
+					
+					        "rank": "2",
+					        "movieNm": "국제수사",
+					        "openDt": "2020-09-29",					    
+					        "salesAcc": "2161749770",
+					        "audiCnt": "91869",					        
+					        "audiAcc": "267697",					      
+					      },
+					      {					       
+					        "rank": "3",					      
+					        "movieNm": "그린랜드",
+					        "openDt": "2020-09-29",					        
+					        "salesAcc": "889780810",
+					        "audiCnt": "44240",					        
+					        "audiAcc": "108524",					        
+					      },
+					      {
+					        "rank": "4",					        
+					        "movieNm": "테넷",
+					        "openDt": "2020-08-26",					      
+					        "salesAcc": "16165746350",
+					        "audiCnt": "24132",					        
+					        "audiAcc": "1759516",					       
+					      },
+					      {
+					        "rank": "5",					    
+					        "movieNm": "죽지않는 인간들의 밤",
+					        "openDt": "2020-09-29",					       
+					        "salesAcc": "427461770",					       
+					        "audiAcc": "53232",					     
+					      },
+					      {					     
+					        "rank": "6",					       
+					        "movieNm": "극장판 포켓몬스터 뮤츠의 역습 EVOLUTION",
+					        "openDt": "2020-09-30",					       
+					        "salesAcc": "276213950",
+					        "audiCnt": "9738",					        
+					        "audiAcc": "34322",					      
+					      },
+					      {					       
+					        "rank": "7",					       
+					        "movieNm": "검객",
+					        "openDt": "2020-09-23",					       
+					        "salesAcc": "1247799390",
+					        "audiCnt": "9556",					      
+					        "audiAcc": "146380",					       
+					      },
+					      {					      
+					        "rank": "8",					       
+					        "movieNm": "그대, 고맙소 : 김호중 생애 첫 팬미팅 무비",
+					        "openDt": "2020-09-29",					        
+					        "salesAcc": "956538500",
+					        "audiCnt": "8300",					       
+					        "audiAcc": "31238",					      
+					      },
+					      {					
+					        "rank": "9",					      
+					        "movieNm": "극장판 미니특공대: 햄버거괴물의 습격",
+					        "openDt": "2020-09-30",					       
+					        "salesAcc": "110462430",
+					        "audiCnt": "4892",					      
+					        "audiAcc": "13647",					    
+					      },
+					      {					        
+					        "rank": "10",					       
+					        "movieNm": "브레이크 더 사일런스: 더 무비",
+					        "openDt": "2020-09-24",					        
+					        "salesAcc": "836760500",
+					        "audiCnt": "3094",					       
+					        "audiAcc": "95172",					      
+					      }
+					    ]
+					  }
+					}
+
+	
+                    console.log(movie);
+	
+	
+	//======================Quiz======================
+	var mList = movie.boxOfficeResult.dailyBoxOfficeList;
+	
+	
+	function makeTable() {
+		let table = document.createElement("table");
+		
+		//th 생성
+		let thName = ["순위", "영화명", "개봉일", "누적매출액", "해당일 관객수", "누적관객수"];
+		let tr = document.createElement("tr");
+		table.appendChild(tr);
+		for(let i = 0; i < 6; i++) {
+			let th = document.createElement("th");
+			let txtnode = document.createTextNode(thName[i]);
+			th.appendChild(txtnode);
+			tr.appendChild(th);
+		}
+		
+		for(let index in mList) {
+			//배열
+			let th = [];
+			
+			//data 조작
+			let rank = mList[index].rank;
+			let movieNm = mList[index].movieNm;
+			let openDt = mList[index].openDt;
+			let salesAcc = mList[index].salesAcc;
+			let audiCnt = mList[index].audiCnt;
+			let audiAcc = mList[index].audiAcc;
+			
+			//배열에 data 담기
+			th.push(rank);
+			th.push(movieNm);
+			th.push(openDt);
+			th.push(salesAcc);
+			th.push(audiCnt);
+			th.push(audiAcc);
+			
+			//tr 생성
+			let tr = document.createElement("tr");
+			table.appendChild(tr);
+			
+			//td 생성
+			for(let i = 0; i < 6; i++) {
+				let td = document.createElement("td");
+				tr.appendChild(td);
+				
+				let txtnode;
+				if(i == 3) {
+					txtnode = document.createTextNode(makeCommaInt(th[i]));
+				}else if(i > 3) {
+					txtnode = document.createTextNode(makeCommaString(th[i]));
+				}else{
+					txtnode = document.createTextNode(th[i]);
+				}
+				td.appendChild(txtnode);
+			}
+		}
+		document.body.appendChild(table);
+	}
+	
+	//콤마 처리
+	function makeCommaInt(obj) {
+		return String(obj).replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,') + "원";
+	}
+	
+	function makeCommaString(obj) {
+		return String(obj).replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,') + "명";
+	}
+	
+	//함수 실행
+	makeTable();
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>
+</head>
+<body>
+    
+</body>
+</html>

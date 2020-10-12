@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+    //1.Array >> []  >> var arr = []; push(), pop()
+    //2.json object >> {}  >> var obj = {}; obj.attribute's name 
+
+    //외부 API Data >> 공공 데이터 : 배열과 객체 혼합 
+    //객체 배열
+    */
+    
+    var students=[];
+    students.push({name:'Andrius', english:80, math:70});
+    students.push({name:'Andy', english:70, math:90});
+    students.push({name:'Gerry', english:60, math:10});
+
+    //[{},{},{}]
+    //기존에 만들어진 객체에 함수 추가
+    for(let index in students){
+        //students[index]>>object>>{}
+        students[index].getSum=function(){return this.english+this.math};
+        students[index].getAvg=function(){return this.getSum()/2};
+    }
+
+    console.log(students);
+
+    for(let index in students){
+        console.log(students[index].name);
+        console.log(students[index].getSum());
+        console.log(students[index].getAvg());
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

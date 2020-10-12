@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="frm">
+        <fieldset>
+            <legend>Address book</legend>
+            <textarea name="txt" id="txt" cols="30" rows="10"></textarea>
+            <input type="submit" id="sub" value="Submit">
+        </fieldset>
+    </form>
+    
+    <!--script를 head사이에 넣으면 window.onload >> body에 넣으면 없어도 됨-->
+    <script type="text/javascript">
+        var add = ["Andy","andyuz14@gmail.com"]
+
+        var frm = document.getElementById("frm");
+        function addr_Search(event){
+            console.log(event.type);
+            var textarea = frm.txt;
+            
+            textarea.value="Name/Address \n";
+            textarea.value+=add[0]+","+add[1]+"\n";
+
+            //event.preventDefault();
+            //document.frm.submit();
+        }
+
+        //
+        frm.addEventListener('submit', function(event){
+            event.preventDefault(); // 기본 이벤트 해제 
+            addr_Search(event);
+        });
+    </script>
+</body>
+</html>

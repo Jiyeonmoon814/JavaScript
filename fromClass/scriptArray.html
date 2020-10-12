@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        javascript : Array (정적+collection)
+    */
+    var array = ['apples','grapes'];
+    document.write(array.toString()+"<br>"); // 재정의 >> 배열값을 출력
+    document.write(array+"- toString() default <br>");
+
+    for(let i=0; i<array.length; i++){
+        document.write(array[i]+"<br>");
+    }
+
+    //collection과 같은 동적 영역 
+    array[2] = "bananas"; // 동적 데이터 추가 
+    document.write(array.toString()+"<br>"+array.length+"<br>");
+
+    array[10]="mangos";
+    document.write(array.toString()+"<br>"+array.length+"<br>");
+    document.write(array[9]+"_array[9]<br>"); // undefined
+    array[9]="pears";
+    document.write("initialization:"+array[9]+"_array[9]<br>");
+
+    var array2 = ["one", "two", "three"];
+    document.write(array2.length+"<br>");
+
+    array2.length=2;
+    document.write(array2.toString()+"<br>"+array2.length+"<br>");
+
+    array2.length=4;
+    document.write(array2.toString()+"<br>"+array2.length+"<br>");
+    document.write(array2[2]+"<br>");
+
+    //point js array >> stack >> lifo >> push(), pop()
+    array2.push("four");
+    document.write("push:"+array2.toString()+"<br>"+array2.length+"<br>");
+    document.write(array2.pop()+"<br>");
+    document.write(array2.pop()+"<br>");
+    document.write(array2.pop()+"<br>");
+    document.write(array2.pop()+"<br>");
+    document.write(array2.pop()+"<br>");
+
+    //Good
+    var list=[];
+    list.push("A");
+    list.push("B");
+    list.push("C");
+
+    document.write("<br>"+list.pop());
+
+    /*
+    Popping
+    The pop() method removes the last element from an array:
+
+    Pushing
+    The push() method adds a new element to an array (at the end):
+
+    Shifting Elements
+    Shifting is equivalent to popping, working on the first element instead of the last.
+    The shift() method removes the first array element and "shifts" all other elements to a lower index.
+
+    Array.forEach()
+    The forEach() method calls a function (a callback function) once for each array element.
+
+    Array.map()
+    The map() method creates a new array by performing a function on each array element.
+    The map() method does not execute the function for array elements without values.
+    The map() method does not change the original array.
+
+    Array.filter()
+    The filter() method creates a new array with array elements that passes a test.
+
+    Array.reduce()
+    The reduce() method runs a function on each array element to produce (reduce it to) a single value.
+    The reduce() method works from left-to-right in the array. See also reduceRight().
+    The reduce() method does not reduce the original array.
+    */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
