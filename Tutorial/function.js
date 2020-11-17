@@ -90,7 +90,7 @@ console.log(ageMap);
 //    }
 //});
 
-const sortedCompanies = companies.sort((a,b)=>(a.start>b.start?1:-1));
+const sortedCompanies = companies.sort((a,b)=>(a.start>b.start?1:-1));//a-b ascending
 
 console.log(sortedCompanies);
 
