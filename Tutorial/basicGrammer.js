@@ -67,7 +67,3 @@ const candyMachine2 = {
 };
 
 const {putCandy, status : {count2}} = candyMachine2;
-
-putCandy();
-console.log(count2);
-console.log(putCandy);
